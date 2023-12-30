@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dracula">
+<head>
+<meta charset="utf-8">
+<meta content="#282a36" data-react-helmet="true" name="theme-color" />
+
+<title>sessionLogin</title>
+<meta name="author" content="wtfchewy">
+
+<!-- CSS -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <ul class="menu menu-horizontal px-6">
+            <li><a class="bg-base-300" href="">GitHub</a></li>
+        </ul>
+    </div>
+        <div class="navbar-center">
+            <a class="flex-0 btn btn-ghost px-6">
+                <div class="font-title text-primary inline-flex text-3xl">
+                    <span class="lowercase">session</span>
+                    <span class="text-base-content lowercase">login</span>
+                </div>
+            </a>
+        </div>
+        <div class="navbar-end">
+            <ul class="menu menu-horizontal px-6">
+                {% if data.signed_in == False %}
+                <li><a class="bg-base-300" href="/create">Create Account</a></li>
+                {% else %}
+                <li>
+                    <details>
+                        <summary class="bg-base-300">
+                            {{ data.formated_account_number }}
+                        </summary>
+                        <ul tabindex="0" class="p-2  shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
+                            <li>
+                            <a class="justify-between">
+                                Dashboard
+                                <span class="badge">Private!</span>
+                            </a>
+                            </li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </details>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+  <div>
+    {% block content %}
+      <p>Default content...</p>
+    {% endblock content %}
+  </div>
+
+<footer class="footer footer-center p-4 bg-base-300 text-base-content">
+<div>
+    <p>made by <a href="https://github.com/wtfchewy/" class="link link-secondary">wtfchewy</a></p>
+</div>
+</footer>
+
+</body>
+</html>
