@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="min-h-full flex items-center justify-center mt-10 py-12 px-8">
+
+    <div class="card shrink-0 w-full max-w-md bg-base-200">
+        <div class="overflow-x-auto">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Account Number</th>
+                    <th>Balance</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for account in data.accounts %}
+                <tr>
+                    <th>{{ account.id }}</th>
+                    <td>{{ account.number }}</td>
+                    <td>${{ account.balance }} USD</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
