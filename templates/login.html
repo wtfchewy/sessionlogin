@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="min-h-full flex items-center justify-center mt-10 py-12 px-8">
+
+    <div class="card shrink-0 w-full max-w-md bg-base-200">
+        <h2 class="mt-5 text-center text-4xl font-extrabold text-primary">Log in</h2>
+
+        <form class="card-body" method="POST">
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text">Account Number</span>
+                </label>
+                <input name="account_number" type="text" inputmode="numeric" maxlength="16" placeholder="Enter your account number" class="input input-bordered" required />
+                </div>
+                <div class="form-control mt-6">
+                <button class="btn btn-primary">Login</button>
+            </div>
+        </form>
+
+        <span class="mb-2 text-center link link-secondary">I lost my account number</span>
+        <div class="mx-8 divider"></div> 
+        <button class="mb-8 mx-8 btn btn-secondary">Create new account</button>
+        
+    </div>
+    
+</div>
+{% endblock content %}
