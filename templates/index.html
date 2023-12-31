@@ -1,29 +1,30 @@
 {% extends "base.html" %}
-    {% block content %}
-    <div class="">
-        <div class="hero-content col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
-            <div class="lg:px-10 lg:pb-32">
-                <h1 class="font-title py-3 font-extrabold lg:py-10">
-                    <div class="mb-2 text-7xl">Session Login</div>
-                    <div class="text-3xl">The most 
-                        <span class="inline-grid">
-                            <span class="px-1 pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text blur-xl [transform:translate3d(0,0,0)] [-webkit-text-fill-color:transparent] before:content-[attr(data-text)] [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]" aria-hidden="true" data-text="private"></span>
-                            <span class="px-1 pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&amp;::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]">private</span> 
-                        </span>
-                        and simple user system. </div>
-                </h1>
-                <p class="text-base-content/70 font-title py-1 font-light text-2xl">A session based login system allows you to attach<br> no personal information to users and keep them <span class="border-base-content/20 border-b-2">private.</span></p>
-                <div class="py-7 inline-flex w-full flex-col gap-2 md:flex-row xl:justify-start">
-                    <a href="" class="btn btn-lg group px-12">
-                        <span>Source Code</span> 
-                    </a> 
-                    <a href="" class="btn btn-neutral btn-lg group px-12">
-                        How to use? 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden h-6 w-6 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 md:inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path></svg>
-                    </a>
-                </div>
+
+{% block content %}
+<div class="">
+    <div class="hero-content col-start-1 row-start-1 w-full max-w-7xl flex-col justify-between gap-10 pb-40 lg:flex-row lg:items-end lg:gap-0 xl:gap-20">
+        <div class="lg:px-10 lg:pb-32">
+            <h1 class="font-title py-3 font-extrabold lg:py-10">
+                <div class="mb-2 text-7xl">Session Login</div>
+                <div class="text-3xl">The most 
+                    <span class="inline-grid">
+                        <span class="px-1 pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text blur-xl [transform:translate3d(0,0,0)] [-webkit-text-fill-color:transparent] before:content-[attr(data-text)] [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]" aria-hidden="true" data-text="private"></span>
+                        <span class="px-1 pointer-events-none col-start-1 row-start-1 bg-[linear-gradient(90deg,theme(colors.error)_0%,theme(colors.secondary)_9%,theme(colors.secondary)_42%,theme(colors.primary)_47%,theme(colors.accent)_100%)] bg-clip-text [-webkit-text-fill-color:transparent] [&amp;::selection]:bg-blue-700/20 [@supports(color:oklch(0_0_0))]:bg-[linear-gradient(90deg,oklch(var(--s))_4%,color-mix(in_oklch,oklch(var(--s)),oklch(var(--er)))_22%,oklch(var(--p))_45%,color-mix(in_oklch,oklch(var(--p)),oklch(var(--a)))_67%,oklch(var(--a))_100.2%)]">private</span> 
+                    </span>
+                    and simple user system. </div>
+            </h1>
+            <p class="text-base-content/70 font-title py-1 font-light text-2xl">A session based login system allows you to attach<br> no personal information to users and keep them <span class="border-base-content/20 border-b-2">private.</span></p>
+            <div class="py-7 inline-flex w-full flex-col gap-2 md:flex-row xl:justify-start">
+                <a href="" class="btn btn-lg group px-12">
+                    <span>Source Code</span> 
+                </a> 
+                <a href="" class="btn btn-neutral btn-lg group px-12">
+                    How to use? 
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hidden h-6 w-6 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 md:inline-block"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path></svg>
+                </a>
             </div>
-            
         </div>
+        
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
