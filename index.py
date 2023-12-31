@@ -1,6 +1,6 @@
 from flask import Flask, request, session, render_template, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-import constants
+from constants import format
 import random
 
 app = Flask(__name__)
@@ -8,8 +8,7 @@ app.config.from_pyfile('constants.py')
 db = SQLAlchemy(app)
 
 class Account(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    number = db.Column(db.Integer, nullable=False)
+    number = db.Column(db.Integer, nullable=False, primary_key=True)
     balance = db.Column(db.Integer)
 
     def __repr__(self):
@@ -46,19 +45,22 @@ def test():
     
 @app.route('/login', methods=('GET', 'POST'))
 def login():
-    data = {'signed_in': False}
+    data = {'signed_in': False, 'error': False}
     
     if request.method == 'POST':
         account_number = request.form['account_number']
-        if db.one_or_404(db.select(Account).filter_by(number=account_number)) != None:
+        if Account.query.get(account_number) != None:
             session['account_number'] = account_number
             session['formated_account_number'] = format(account_number)
 
-        return redirect(url_for('index'))
+            return redirect(url_for('index'))
+        else:
+
+            return render_template('login.html', data={'signed_in': False, 'error': True})
 
     return render_template('login.html', data=data)
 
-@app.route('/create')
+@app.route('/signup')
 def signup():
 
     number = "".join([str(random.randint(0, 9)) for _ in range(16)])
