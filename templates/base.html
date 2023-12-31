@@ -12,7 +12,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 <div class="navbar bg-base-100">
     <div class="navbar-start">
         <ul class="menu menu-horizontal px-6">
@@ -20,7 +20,7 @@
         </ul>
     </div>
         <div class="navbar-center">
-            <a class="flex-0 btn btn-ghost px-6">
+            <a href="/" class="flex-0 btn btn-ghost px-6">
                 <div class="font-title text-primary inline-flex text-3xl">
                     <span class="lowercase">session</span>
                     <span class="text-base-content lowercase">login</span>
@@ -28,9 +28,10 @@
             </a>
         </div>
         <div class="navbar-end">
-            <ul class="menu menu-horizontal px-6">
+            <ul class="menu menu-horizontal gap-3 px-6">
                 {% if data.signed_in == False %}
-                <li><a class="bg-base-300" href="/create">Create Account</a></li>
+                <li><a class="bg-base-300" href="/login">Account</a></li>
+                <li><a class="bg-base-300" href="/create">Get Started</a></li>
                 {% else %}
                 <li>
                     <details>
@@ -54,17 +55,17 @@
     </div>
 </div>
 
-  <div>
-    {% block content %}
-      <p>Default content...</p>
-    {% endblock content %}
-  </div>
-
-<footer class="footer footer-center p-4 bg-base-300 text-base-content">
-<div>
-    <p>made by <a href="https://github.com/wtfchewy/" class="link link-secondary">wtfchewy</a></p>
+<div >
+{% block content %}
+    <p>Default content...</p>
+{% endblock content %}
 </div>
-</footer>
 
 </body>
+
+<footer class="mt-auto footer footer-center p-4 bg-base-300 text-base-content">
+    <div>
+        <p>made by <a href="https://github.com/wtfchewy/" class="link link-secondary">wtfchewy</a></p>
+    </div>
+</footer>
 </html>
