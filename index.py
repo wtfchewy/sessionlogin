@@ -79,5 +79,10 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
+@app.errorhandler(404)
+def error_404(error):
+    data = {'signed_in': False}
+    return render_template("404.html", data=data) 
+
 if __name__ == '__main__':
     app.run()
