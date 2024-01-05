@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="py-5 px-10 grid grid-cols-10 grid-rows-1 h-screen gap-2 grid-flow-col">
+    <div class="col-span-3">
+        <div class="font-extrabold text-5xl">Dashboard</div>
+        <br>
+        <div class="stat-title">Account number</div>
+        <div class="text-xl blur transition ease-in-out delay-150 duration-200 hover:md:filter-none">
+            {{ data.formated_account_number }}
+        </div>
+        <br class="invisible">
+        <div class="stat-title">Balance</div>
+        <div class="text-xl">
+            ${{ data.balance }} USD
+        </div>
+    </div>
+    <div class="bg-green-100 text-green-500 text-lg font-bold text-center col-span-9">
+        Put stuff here!
+    </div>
+  </div>
+{% endblock %}

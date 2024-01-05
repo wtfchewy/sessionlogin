@@ -29,9 +29,12 @@ def index():
 @app.route('/dashboard')
 def dashboard():
     if session.get('account_number'):
+        account = Account.query.get(session.get('account_number'))
+
         data = {
             'account_number': session['account_number'],
-            'formated_account_number': session['formated_account_number']
+            'formated_account_number': session['formated_account_number'],
+            'balance': account.balance
         }
         return render_template('dashboard.html', data=data)
     else:
@@ -72,12 +75,12 @@ def signup():
     db.session.add(account)
     db.session.commit()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('dashboard'))
 
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 @app.errorhandler(404)
 def error_404(error):
