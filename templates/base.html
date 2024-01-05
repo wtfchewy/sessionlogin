@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dracula">
 <head>
+
+<title>Session | {% block title %}{% endblock %}</title>
+<meta name="author" content="wtfchewy">
+
 <meta charset="utf-8">
 <meta content="#282a36" data-react-helmet="true" name="theme-color" />
-
-<title>sessionLogin</title>
-<meta name="author" content="wtfchewy">
 
 <!-- CSS -->
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.24/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -33,22 +35,9 @@
                 <li><a class="bg-base-300" href="/login">Account</a></li>
                 <li><a class="bg-base-300" href="/signup">Get Started</a></li>
                 {% else %}
-                <li>
-                    <details>
-                        <summary class="bg-base-300">
-                            {{ data.formated_account_number }}
-                        </summary>
-                        <ul tabindex="0" class="p-2  shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-52">
-                            <li>
-                            <a class="justify-between">
-                                Dashboard
-                                <span class="badge">Private!</span>
-                            </a>
-                            </li>
-                            <li><a href="/logout">Logout</a></li>
-                        </ul>
-                    </details>
-                </li>
+                <li><a class="bg-base-300" href="/dashboard">Dashboard</a></li>
+                <li><a class="bg-error" href="/logout">Logout</a></li>
+
                 {% endif %}
             </ul>
         </div>
